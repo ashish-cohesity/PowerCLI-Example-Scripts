@@ -67,7 +67,7 @@ Function Set-VCenterCEIP {
             $ceipSettings.consentConfigurations[0].consentAccepted = $False
             $ceipSettings.consentConfigurations[1].consentAccepted = $False
             $updatedceipSettings = $ceipSettings | ConvertTo-Json
-            Write-Host "Disablng Customer Experience Improvement Program (CEIP) ..."
+            Write-Host "Disabling Customer Experience Improvement Program (CEIP) ..."
             Get-AdvancedSetting -Entity $global:DefaultVIServer -Name VirtualCenter.DataCollector.ConsentData | Set-AdvancedSetting -Value $updatedceipSettings -Confirm:$false
         }
     }
